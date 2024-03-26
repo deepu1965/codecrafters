@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page - Image to Video Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image to Video Converter</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                    {% if session.role == 'admin' %}
+                    <li><a href="{{ url_for('admin') }}">Admin Dashboard</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('login') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="upload-section">
+            <h2>Upload Images</h2>
+            <form id="image-upload-form" action="/upload" method="post" enctype="multipart/form-data" class="dropzone" multiple>
+                <div class="dz-message">Drop files here or click to upload.</div>
+                <div class="fallback">
+                    <input name="file" type="file" id="imageUpload" multiple />
+                </div>
+            </form>
+        </section>
+        
+        <section id="video-customization-section">
+            <h2>Customize Video</h2>
+            <div id="photo-selection">
+                <!-- Thumbnails will be dynamically added here -->
+            </div>
+            <div class="music-upload">
+                <label for="background-music">Background Music:</label>
+                <input type="file" id="background-music" name="background-music" accept="audio/*">
+            </div>
+            <div class="duration-setting">
+                <label for="image-duration">Image Duration (seconds):</label>
+                <input type="number" id="image-duration" name="image-duration" min="1" step="1" value="5">
+            </div>
+            <div class="transition-effects">
+                <label for="transition-effect">Transition Effects:</label>
+                <select id="transition-effect" name="transition-effect">
+                    <option value="fadein">fadein</option>
+                    <option value="fadeout">fadeout</option>
+                    <option value="crossfade">crossfade</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <button id="apply-customizations" onclick="applyCustomizations()">Apply Customizations</button> <!-- Button to apply the customizations -->
+        </section>
+        
+        <section id="video-preview-section">
+            <h2>Preview</h2>
+            <video id="video-preview" controls autoplay>
+                <source src="{{ url_for('static', filename='uploads/output_video.mp4') }}" type="video/mp4" id="videoSource">
+            </video>
+        </section>
+        
+        <section id="output-settings-section">
+            <h2>Output Settings</h2>
+            <div class="output-resolution">
+                <label for="resolution">Resolution:</label>
+                <select id="resolution" name="resolution">
+                    <option value="1080">1080p</option>
+                    <option value="720">720p</option>
+                    <option value="480">480p</option>
+                </select>
+            </div>
+            <button id="create-video-btn" onclick="createvideo()" >Create Video</button> 
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+</body>
+</html>

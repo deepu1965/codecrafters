@@ -1,0 +1,213 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/016/208/691/original/abstract-background-with-blue-beautiful-smoke-from-waves-and-lines-energy-hi-tech-magical-laser-neon-with-glow-effect-screensaver-beautiful-animation-in-high-resolution-4k-video.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #E0E0E0;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem; 
+}
+header {
+    background: rgba(3, 3, 3, 0.85);
+    color: #fff;
+    padding: 2rem 0; 
+    text-align: center;
+    border-radius: 10px;
+    margin: 1rem auto; 
+    box-shadow: 0 0 15px #BB86FC;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f3f3f2;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #181618;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #BB86FC;
+}
+
+/* Section Styles */
+section {
+    background: rgba(0, 0, 0, 0.85);
+    margin: 1rem 0;
+    padding: 1rem; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px #BB86FC;
+    border: 1px solid #BB86FC;
+    text-align: center;
+}
+
+/* Input Styles */
+input, select, button {
+    width: 70%; 
+    margin: 1rem auto; 
+    display: block; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #222;
+    color: #E0E0E0;
+}
+
+/* File Input Styles */
+input[type="file"] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #BB86FC;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Dropdown Styles */
+select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+    background: #5c09e2;
+    padding-right: 2rem; 
+}
+
+/*  Dropdown Arrow */
+select {
+    background-image: linear-gradient(45deg, transparent 50%, #E0E0E0 50%), 
+                      linear-gradient(135deg, #E0E0E0 50%, transparent 50%);
+    background-position: right 15px top 1rem, right 10px top 1rem;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+
+select {
+    padding: 10px;
+    margin-bottom: 20px; 
+}
+
+/* Button Styles */
+button {
+    background-color: #BB86FC;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #BB86FC;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px #BB86FC;
+}
+
+/* Video Preview Styles */
+#video-preview {
+    width: 90%;
+    max-height: 500px;
+    margin: 10px auto; 
+    background-color: #000;
+    display: none;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    header, .container, section {
+        padding: 15px;
+    }
+
+    nav ul li a {
+        padding: 7px 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 48px) {
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        margin-bottom: 5px; 
+    }
+
+   
+    section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        margin-bottom: 5px; 
+    }
+
+   
+    section {
+        padding: 15px;
+    }
+
+   
+    input, select, button {
+        padding: 8px;
+        margin: 8px auto;
+    }
+
+
+    #video-preview {
+        max-height: 250px; 
+    }
+}
+

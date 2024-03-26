@@ -1,0 +1,5 @@
+Flask
+Flask-SQLAlchemy
+pymysql   
+mysqlclient
+Flask==2.1.2
